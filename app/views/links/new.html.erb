@@ -1,0 +1,7 @@
+<h1>New Link</h1>
+
+<%= form_with model: @link do |form| %>
+  <%= form.label "Enter Link" %>
+  <%= form.text_field :url %>
+  <%= form.submit %>
+<% end %>

@@ -1,2 +1,11 @@
-<h1>Hello, Rails!</h1>
-<button class="btn">Hi</button>
+<div>
+  <h1>Shortend links</h1>
+</div>
+
+<ul>
+  <% @links.each do |link| %>
+    <li>
+      <%= link.url %> -> <%= link.slug %>
+    </li>
+  <% end %>
+</ul>
