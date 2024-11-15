@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_15_002925) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_15_013611) do
   create_table "links", force: :cascade do |t|
     t.string "source", null: false
     t.string "short_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "links_users", id: false, force: :cascade do |t|
+    t.integer "link_id"
+    t.integer "user_id"
+    t.index ["link_id"], name: "index_links_users_on_link_id"
+    t.index ["user_id"], name: "index_links_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,14 +36,4 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_15_002925) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  create_table "users_links", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "link_id"
-    t.index ["link_id"], name: "index_users_links_on_link_id"
-    t.index ["user_id"], name: "index_users_links_on_user_id"
-  end
-
-  add_foreign_key "users_links", "links"
-  add_foreign_key "users_links", "users"
 end

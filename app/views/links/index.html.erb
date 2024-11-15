@@ -1,0 +1,16 @@
+<h1>
+  Links owned by <%= @user.email %>
+</h1>
+
+<% @links.each do |link| %>
+  <div>
+    <h2>
+      <%= link.short_url %>
+    </h2>
+    <p>
+      <%= link.source %>
+    </p>
+  </div>
+<% end %>
+
+<%= link_to 'New Link', new_link_path %>
