@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get "/links", to: "links#index", as: "links"
   post "/links", to: "links#create"
   get "/links/new", to: "links#new", as: "new_link"
-  get "/to/:short_url", to: "links#show"
+  get "/to/:short_url", to: "links#redirect"
+  delete "/links/:id", to: "links#destroy"
+  get "/link/:id", to: "links#show", as: "link"
 end
