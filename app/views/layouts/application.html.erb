@@ -24,17 +24,24 @@
   </head>
 
   <body>
-    <main class="container mx-auto">
+    <main class="h-screen max-h-screen flex flex-col">
       <p class="notice"><%= notice %></p> 
       <p class="alert"><%= alert %></p> 
 
-      <div>
-        <% if user_signed_in? %>
-          <div div>Welcome <%= current_user.email %></div>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-        <% else %> 
-          <%= button_to "Sign in", new_user_session_path %> 
-        <% end %>
+      <div class="bg-[#E0115F] p-4 flex justify-between items-center text-white">
+        <div>
+          <%= link_to "Rails URL Shortener", root_path, class: "text-xl font-semibold" %>
+        </div>
+        <div class="flex gap-4 items-center">
+          <% if user_signed_in? %>
+            <div div>Welcome <%= current_user.email %></div>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "bg-white text-black p-2 rounded-lg" %> 
+          <% else %> 
+            <%= link_to "Sign in", new_user_session_path, class: "bg-white text-black p-2 rounded-lg" %>
+            <p>or</p>
+            <%= link_to "Register", new_user_registration_path, class: "bg-white text-black p-2 rounded-lg" %>
+          <% end %>
+        </div>
       </div>
 
       <%= yield %>
