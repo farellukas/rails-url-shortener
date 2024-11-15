@@ -46,6 +46,14 @@ class LinksController < ApplicationController
     end
   end
 
+  def show
+    # get the current user
+    user = current_user
+
+    # get the link
+    @link = user.links.find(params[:id])
+  end
+
   def destroy
     # get the current user
     user = current_user

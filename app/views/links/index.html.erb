@@ -1,12 +1,20 @@
-<% @links.each do |link| %>
-  <div>
-    <h2>
-      <%= link.short_url %>
-    </h2>
-    <p>
-      <%= link.source %>
-    </p>
+<div class="flex-1">
+  <div class="container mx-auto my-8">
+    <div class="space-y-4">
+      <% @links.each do |link| %>
+        <div class="bg-primary rounded-xl p-4 text-white flex justify-between items-center">
+          <div>
+            <%= link_to "/to/" + link.short_url, "/to/" + link.short_url, class: "font-bold" %>
+            <p>
+              <%= link.source %>
+            </p>
+          </div>
+          <div>
+            <%= button_to "Delete", link_path(link), method: :delete, data: { confirm: "Are you sure?" }, class: "btn" %>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to '+ New Link', new_link_path, role: "button", class: "btn w-full" %>
+    </div>
   </div>
-<% end %>
-
-<%= link_to 'New Link', new_link_path %>
+</div>

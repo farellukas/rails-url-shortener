@@ -1,12 +1,12 @@
-<h1>New Link for </h1>
+<div class="flex-1 flex justify-center items-center">
+  <%= form_with model: @link, class: "space-y-4" do |form| %>
+    <div>
+      <%= form.label :source %><br>
+      <%= form.text_field :source, class: "input input-bordered" %>
+    </div>
 
-<%= form_with model: @link do |form| %>
-  <div>
-    <%= form.label :source %><br>
-    <%= form.text_field :source %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div>
+      <%= form.submit nil, class: "btn w-full btn-primary text-white btn-sm" %>
+    </div>
+  <% end %>
+</div>
