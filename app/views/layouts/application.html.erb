@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
   <head>
     <title><%= content_for(:title) || "Rails URL Shortener" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -25,10 +25,10 @@
 
   <body>
     <main class="h-screen max-h-screen flex flex-col">
-      <p class="notice"><%= notice %></p> 
-      <p class="alert"><%= alert %></p> 
+      <p><%= notice %></p> 
+      <p><%= alert %></p> 
 
-      <div class="bg-[#E0115F] p-4 flex justify-between items-center text-white">
+      <div class="bg-primary p-4 flex justify-between items-center text-white">
         <div>
           <%= link_to "Rails URL Shortener", root_path, class: "text-xl font-semibold" %>
         </div>

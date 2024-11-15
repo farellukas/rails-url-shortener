@@ -2,26 +2,26 @@
   <div class="space-y-4">
     <h2 class="text-lg font-semibold">Log in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-2" }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
       <div class="">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-bordered input" %>
       </div>
 
       <div class="">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "input-bordered input" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="">
-          <%= f.check_box :remember_me %>
+        <div class="flex items-center gap-2">
+          <%= f.check_box :remember_me, class: "checkbox" %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "w-full bg-[#E0115F] rounded-lg text-white p-2" %>
+        <%= f.submit "Log in", class: "w-full bg-[#E0115F] rounded-lg text-white p-2 cursor-pointer" %>
       </div>
 
       <div class="text-center">
