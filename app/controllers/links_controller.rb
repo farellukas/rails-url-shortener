@@ -22,7 +22,7 @@ class LinksController < ApplicationController
 
     if link.present?
       # if the link already exists, add the user to the link
-      link.users << user
+      link.users << user unless link.users.include?(user)
     else
       # if the link does not exist, create a new link
       link = Link.new(link_params)
@@ -31,7 +31,7 @@ class LinksController < ApplicationController
     end
 
     # render success
-    render status: 201, json: { success: true }
+    redirect_to links_path
   end
 
   def show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_15_013611) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_15_014925) do
   create_table "links", force: :cascade do |t|
     t.string "source", null: false
     t.string "short_url", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_15_013611) do
     t.integer "link_id"
     t.integer "user_id"
     t.index ["link_id"], name: "index_links_users_on_link_id"
+    t.index ["user_id", "link_id"], name: "index_links_users_on_user_id_and_link_id", unique: true
     t.index ["user_id"], name: "index_links_users_on_user_id"
   end
 
