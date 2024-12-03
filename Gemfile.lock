@@ -283,7 +283,7 @@ GEM
       rubocop-rails
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
-    securerandom (0.3.2)
+    securerandom (0.4.0)
     selenium-webdriver (4.26.0)
       base64 (~> 0.2)
       logger (~> 1.4)
@@ -393,7 +393,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.0)
   rubocop-rails-omakase
-  securerandom (~> 0.3.2)
+  securerandom (~> 0.4.0)
   selenium-webdriver
   solid_cable
   solid_cache
