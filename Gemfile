@@ -66,4 +66,4 @@ gem "tailwindcss-rails", "~> 3.0"
 
 gem "devise", "~> 4.9"
 
-gem "securerandom", "~> 0.3.2"
+gem "securerandom", "~> 0.4.1"
